@@ -25,6 +25,10 @@ public class MovieController {
     public void addMovie(@RequestBody Movie movie){
         movieService.setMovie(movie);
     }
+    @PostMapping("/batch")
+    public void batchAddMovie(@RequestBody List<Movie> movies){
+        movieService.batchSetMovie(movies);
+    }
     @DeleteMapping("/delete/{Id}")
     public void deleteMovie(@PathVariable int Id){
         movieService.deleteMovieById(Id);

@@ -17,6 +17,10 @@ public class MovieServiceImpl implements MovieService{
         repo.save(movie);
     }
 
+    public void batchSetMovie(List<Movie> movies){
+        repo.saveAll(movies);
+    }
+
     public Movie getMovieById(int movieId) {
         return repo.findById(movieId).orElse(new Movie());
     }
